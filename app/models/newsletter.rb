@@ -5,6 +5,13 @@ class Newsletter < ActiveRecord::Base
                       :length => { :maximum => 255 }
  validates :body, :length => { :maximum => 100000 }
 
+
+ attr_accessible :subject,
+                 :body,
+                 :sent,
+                 :created_at,
+                 :updated_at
+ 
  belongs_to :user
  has_many :recipients
 end
